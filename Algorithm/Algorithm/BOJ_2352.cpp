@@ -1,8 +1,8 @@
 /*
-백준 2532번 반도체 설계
-https://www.acmicpc.net/problem/2941
+백준 2352번 반도체 설계
+https://www.acmicpc.net/problem/2352
 
-크로아티아 알파벳 몇 개인지 출력하기
+
 
 19/01/21
 */
@@ -35,15 +35,18 @@ int main() {
 }
 
 int GetDp(const int max_port_num) {
-	
+	int max(0);
+	dp.push_back(0);
 	dp.push_back(port[1]);
 
 	for (int i = 2; i <= max_port_num; ++i) {
-		if (port[i] < dp.at(i - 2)) {
-			dp.at(i - 2) = port[i];
-		}
-		else if (port[i] > dp.back()) {
-			dp.push_back(port[i]);
+		for (int j = 1; j <= dp.size(); ++j) {
+			if (port[i] < dp.at(j) && port[i] > dp.at(j - 1)) {
+				dp.at(j) = port[i];
+			}
+			else if (port[i] > dp.back()) {
+				dp.push_back(port[i]);
+			}
 		}
 	}
 
