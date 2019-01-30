@@ -27,9 +27,9 @@ int main() {
 		cin >> port[i];
 	}
 
-	
+	int result = SelectPort(max_port_num);
 	cout << SelectPort(max_port_num) << endl;
-
+	
 
 	return 0;
 }
