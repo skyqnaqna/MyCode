@@ -35,27 +35,27 @@ int main() {
 		++count;
 
 		for (int i = 0; i < v[count - 1].size(); ++i) {
-			if ((v[count - 1].at(i) - 1) == k) {
+			if ((v[count - 1].at(i) - 1) == k && (v[count - 1].at(i) - 1) <= 100000) {
 				isFind = true;
 			}
-			else if (visit[v[count - 1].at(i) - 1] == false) {
+			else if (visit[v[count - 1].at(i) - 1] == false && (v[count - 1].at(i) - 1) <= 100000) {
 				v[count].push_back(v[count - 1].at(i) - 1);
 				visit[v[count - 1].at(i) - 1] = true;
 			}
 
-			if ((v[count - 1].at(i) + 1) == k) {
+			if ((v[count - 1].at(i) + 1) == k && (v[count - 1].at(i) + 1) <= 100000) {
 				isFind = true;
 			}
-			else if (visit[v[count - 1].at(i) + 1] == false) {
+			else if (visit[v[count - 1].at(i) + 1] == false && (v[count - 1].at(i) + 1) <= 100000) {
 				v[count].push_back(v[count - 1].at(i) + 1);
 				visit[v[count - 1].at(i) + 1] = true;
 			}
 
 
-			if ((v[count - 1].at(i) * 2) == k) {
+			if ((v[count - 1].at(i) * 2) == k && (v[count - 1].at(i) * 2) <= 100000) {
 				isFind = true;
 			}
-			else if (visit[v[count - 1].at(i) * 2] == false) {
+			else if (visit[v[count - 1].at(i) * 2] == false && (v[count - 1].at(i) * 2) <= 100000) {
 				v[count].push_back(v[count - 1].at(i) * 2);
 				visit[v[count - 1].at(i) * 2] = true;
 			}
