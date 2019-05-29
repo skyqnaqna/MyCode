@@ -48,5 +48,14 @@
     <ClCompile Include="BOJ_2493.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="dekker.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="peterson.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="dekker_ex.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
