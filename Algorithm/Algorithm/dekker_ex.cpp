@@ -7,7 +7,7 @@ int main() {
 	//Process i
 	do {
 		flag[i] = true;
-		while (flag[i]) {
+		while (flag[j]) {
 			if (turn == j) {
 				flag[i] == false;
 				while (turn == j)
@@ -25,7 +25,7 @@ int main() {
 	//Process j
 	do {
 		flag[j] = true;
-		while (flag[j]) {
+		while (flag[i]) {
 			if (turn == i) {
 				flag[j] == false;
 				while (turn == i)
