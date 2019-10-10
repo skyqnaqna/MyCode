@@ -1,47 +1,39 @@
 // º° Âï±â - 10
 // https://www.acmicpc.net/problem/2447
-// 07.19
 
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-string MakeStars(string s)
-{
-	string result;
-
-	for (int i = 1; i <= 9; ++i)
-	{
-		if (i == 5)
-		{
-			result += " ";
-			continue;
-		}
-		result += s;
-		if (i == 3 || i == 6) result += "\n";
-		
-	}
-
-	return result;
-}
+void star(int n, int i, int j);
 
 int main()
 {
-
-	string s = "*";
-
-	//cout << s << endl;
-
-	int k;
-	cin >> k;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 	
-	for (int i = 0; i < k; ++i)
+	int N;
+	cin >> N;
+
+	for (int i = 0; i < N; ++i)
 	{
-		s = MakeStars(s);
+		for (int j = 0; j < N; ++j)
+			star(N, i, j);
+		cout << '\n';
 	}
 
-	cout << s << endl;
 
 	return 0;
+}
+
+void star(int n, int i, int j)
+{
+	if ((i / n) % 3 == 1 && (j / n) % 3 == 1)
+		cout << " ";
+	else
+	{
+		if (n / 3 == 0) cout << "*";
+		else star(n / 3, i, j);
+	}
 }

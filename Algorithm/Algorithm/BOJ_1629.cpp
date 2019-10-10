@@ -8,37 +8,32 @@ https://www.acmicpc.net/problem/1629
 
 using namespace std;
 
-long long mul(long long a, long long b, long long c);
+long long mul(long long a, long long b, long long &c);
 
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
-	long long a, b, c, d, result;
-	
-	cin >> a >> b >> c;
-	
+	long long a, b, c;
 
-	
-	
-	
+	cin >> a >> b >> c;
+
 	cout << mul(a%c, b, c) << '\n';
 
 	return 0;
 }
 
-long long mul(long long a, long long b, long long c)
+long long mul(long long a, long long b, long long &c)
 {
-	
-	if (b == 1)	
-		return a;
+	if (b == 1)
+		return a%c;
 	else
 	{
-		long long temp = mul(a, b / 2, c);
+		long long temp = (mul(a, b / 2, c)%c);
 		if (b % 2 == 0)
-			return (temp * temp)%c;
+			return (temp*temp) % c;
 		else
-			return (((temp*temp)%c)*a)%c;
+			return (((temp*temp)%c)*a)%c; // temp*temp가 범위를 초과할 수 있으므로 꼭 %c 해줘야함
 	}
 }
