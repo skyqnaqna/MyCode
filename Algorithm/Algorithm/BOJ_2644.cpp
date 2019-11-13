@@ -13,8 +13,9 @@ int map[101][101] = { 0 };
 bool visit[101] = { false };
 vector<int> edge[101];
 int n, p1, p2, m, result(0);
+bool isFind = false;
 
-int dfs(int, int);
+void dfs(int, int);
 
 int main()
 {
@@ -31,24 +32,27 @@ int main()
 		edge[v].push_back(u);
 	}
 
-	int count(0);
-	dfs(p1,count);
+	
+	dfs(p1,0);
 
+	if (isFind) cout << result << '\n';
+	else cout << -1 << '\n';
 	
 	return 0;
 }
 
-int dfs(int v, int c)
+void dfs(int v, int c)
 {
-	if (visit[v] == true) return 0;
+	if (visit[v] == true) return;
 
 	visit[v] = true;
 	int dist = ++c;
 	
 	if (v == p2)
 	{
-		cout << dist << '\n';
-		return dist;
+		isFind = true;
+		result = dist - 1;
+		return;
 	}
 	else 
 	{
