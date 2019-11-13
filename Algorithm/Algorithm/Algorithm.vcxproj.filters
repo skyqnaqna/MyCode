@@ -66,9 +66,6 @@
     <ClCompile Include="BOJ_1629.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="11724.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="2644.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -76,6 +73,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="DFS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BOJ_11724.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BOJ_2644.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
