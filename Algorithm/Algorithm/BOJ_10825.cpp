@@ -4,7 +4,6 @@
 */
 #include <iostream>
 #include <string>
-#include <vector>
 #include <algorithm>
 
 using namespace std;
@@ -17,9 +16,9 @@ typedef struct student
 	int math;
 }student;
 
-vector<student> v;
+student st[100001];
 
-bool cmp(student a, student b)
+bool cmp(const student &a, const student &b)
 {
 	if (a.kor != b.kor) return a.kor > b.kor;
 	else if (a.eng != b.eng) return a.eng < b.eng;
@@ -30,27 +29,22 @@ bool cmp(student a, student b)
 
 int main(void)
 {	
+	ios::sync_with_stdio(false);
 	int n;
 	string s;
 	int k, e, m;
-	student st;
-
+	
 	cin >> n;
 	
 	for (int i = 0; i < n; ++i)
 	{
-		cin >> s >> k >> e >> m;
-		st.name = s;
-		st.kor = k;
-		st.eng = e;
-		st.math = m;
-		v.push_back(st);
+		cin >> st[i].name >> st[i].kor >> st[i].eng >> st[i].math;
 	}
 
-	sort(v.begin(), v.end(), cmp);
+	sort(st, st+n, cmp);
 
 	for (int i = 0; i < n; ++i)
-		cout << v[i].name << "\n";
+		cout << st[i].name << "\n";
 
 	return 0;
 }
